@@ -1,0 +1,14 @@
+.search__form{
+width: 80%;
+margin: 3rem auto 2rem auto;
+display: flex;
+justify-content: flex-start;
+}
+
+.search__input{
+width: 60%;
+padding: .6rem 0 .6rem .3rem;
+border: 5px solid #999; 
+
+
+}

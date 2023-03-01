@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import CourseForm from '../CourseForm/CourseForm';
 import CourseItem from '../courseItem/CourseItem';
 import  './CourseList.css'
 
@@ -7,6 +8,8 @@ import  './CourseList.css'
 const CoursesList = ({courses}) => {
   //console.log(props)
     return (
+      <React.Fragment>
+        <CourseForm />
       <div className="courses">
       {courses.length === 0
         ? "not items found"
@@ -14,6 +17,8 @@ const CoursesList = ({courses}) => {
             <CourseItem key={course.id} course={course} />
           ))}
     </div>
+      </React.Fragment>
+      
           )
         }
     const getCoursesFromStore = state =>{
