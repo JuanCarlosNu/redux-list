@@ -1,5 +1,6 @@
 import React from 'react';
-import CoursesList from './component/CoursesList';
+import CoursesList from './component/coursesList/CoursesList';
+
 
 function App() {
   return (
