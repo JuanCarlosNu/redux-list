@@ -1,8 +1,7 @@
 import React from 'react';
 import './CourseForm.css';
-import { Connect } from 'react-redux';
+import { connect } from 'react-redux';
 import {searchCourses} from '../../actions/actions'
-
 
 const CourseForm = ({searchCourses}) => {
     return (  
@@ -15,5 +14,4 @@ const CourseForm = ({searchCourses}) => {
        </form>
     );
 }
- 
-export default Connect(null  , {searchCourses})(CourseForm);    
+ export default connect(null, {searchCourses})(CourseForm)
