@@ -4,6 +4,7 @@ import {combineReducers } from 'redux'
 const initState ={
     courses: data,
     inputSearch: "",
+    saved: []
 }
 
 const courses = (state=initState, action)=>{
@@ -17,8 +18,13 @@ const courses = (state=initState, action)=>{
     return state
     
 }       
+const savedList = (state=initState, action)=>{
+    return state
+}
 
 export default combineReducers({
     //courses: courses, ---we can simplify this
-    courses
+    courses,
+    savedList,
+
 })
