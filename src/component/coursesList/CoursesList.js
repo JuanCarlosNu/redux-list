@@ -5,15 +5,16 @@ import CourseItem from '../courseItem/CourseItem';
 import  './CourseList.css'
 
 
-const CoursesList = ({courses}) => {
+const CoursesList = ({courses, inputSearch}) => {
   //console.log(props)
+  const filtered = courses.filter(course=> course.title.toLowerCase().includes(inputSearch.toLowerCase()))
     return (
       <React.Fragment>
         <CourseForm />
       <div className="courses">
-      {courses.length === 0
+      {filtered.length === 0
         ? "not items found"
-        : courses.map(course => (
+        : filtered.map(course => (
             <CourseItem key={course.id} course={course} />
           ))}
     </div>
@@ -24,7 +25,8 @@ const CoursesList = ({courses}) => {
     const getCoursesFromStore = state =>{
         console.log(state)
         return{
-          courses: state.courses.courses
+          courses: state.courses.courses,
+          inputSearch: state.courses.inputSearch
 
         }
      }
