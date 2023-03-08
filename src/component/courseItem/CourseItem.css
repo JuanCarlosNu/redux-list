@@ -62,3 +62,11 @@
     color: #000;
     text-decoration: none;
 }
+
+.add{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    cursor: pointer;
+    border: 1px solid black;
+}
