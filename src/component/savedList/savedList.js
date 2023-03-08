@@ -13,4 +13,4 @@ const getSavedFromStore= state =>{
     };
 }
  
-export default connect(getSavedFromStore) (SavedList);
+export default connect(getSavedFromStore) (SavedList);  
