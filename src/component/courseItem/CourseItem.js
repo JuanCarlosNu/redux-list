@@ -3,9 +3,8 @@ import "./CourseItem.css";
 import { connect } from "react-redux";
 import { addSavedItem } from "../../actions/actions";
 
-const CourseItem = props => {
-  const course = props.course;
-
+const CourseItem =({course, addSavedItem})  => {
+  
   return (
     <div className="course">
       <div className="img__container">
@@ -30,7 +29,7 @@ const CourseItem = props => {
       <span className={course.isHot ? "course__status" : ""}>
         {course.isHot ? "Hot" : null}
       </span>
-      <span className="add" onClick={()=>addSavedItem(course)}>add</span>
+      <span className="add" onClick={()=> addSavedItem(course)}>add</span>
     </div>
   );
 };
