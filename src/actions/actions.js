@@ -10,7 +10,7 @@
 
 export const addSavedItem = item =>{
   return{
-    type: 'SAVED_ITEM',
+    type: 'ADD_ITEM',
     payload: item,
   }
 
