@@ -15,7 +15,7 @@ export const addSavedItem = item =>{
   }
 
 }
-export const remuveSavedItem = id => {
+export const removeSavedItem = id => {
   return{
     type: 'REMOVE_ITEM',
     payload: id,
