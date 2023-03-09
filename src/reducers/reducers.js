@@ -17,17 +17,24 @@ const courses = (state=initState, action)=>{
     }
     return state
     
-}       
+}           
 const savedList = (state = initState , action) => {
-    
     if( action.type === 'ADD_ITEM'){
-        return {
+       return {
             ...state,
             saved: [...state.saved, action.payload],
+      };
+    }
+    
+    else if(action.type === 'REMOVE_ITEM'){
+        return {
+            ...state,
+            saved: state.saved.filter(item => item.id !== action.payload)
         }
     }
-    return state
-}
+    
+    return state;
+};
 
 export default combineReducers({
     //courses: courses, ---we can simplify this
