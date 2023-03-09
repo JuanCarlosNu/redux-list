@@ -2,6 +2,7 @@ import React from 'react';
 import '../SavedItem/SavedItem.css'
 import { connect } from 'react-redux';
 import { removeSavedItem } from '../../actions/actions';
+import { Link } from 'react-router-dom';
 
 const SavedItem = ({savedItem, removeSavedItem}) => {
     return ( 
@@ -9,7 +10,9 @@ const SavedItem = ({savedItem, removeSavedItem}) => {
             <div className='img__container--saved'>
                 <img className='course__img--saved' src={savedItem.courseImage} alt='img' />
             </div>
+            <Link to={`/courses/${course.id}`} >
             <h3 className='course__title--saved'>{savedItem.title}</h3>
+            </Link>
             <p className='course__author--saved'>{savedItem.author}</p>
 
             <div className='course__price--saved'>
