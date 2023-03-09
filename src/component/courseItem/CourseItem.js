@@ -1,9 +1,9 @@
 import React from "react";
 import "./CourseItem.css";
 import { connect } from "react-redux";
-import { addSavedItem } from "../../actions/actions";
+import { addSavedItem, removeSavedItem } from "../../actions/actions";
 
-const CourseItem =({course, addSavedItem})  => {
+const CourseItem =({course, addSavedItem, saved, removeSavedItem})  => {
   
   return (
     <div className="course">
@@ -29,9 +29,19 @@ const CourseItem =({course, addSavedItem})  => {
       <span className={course.isHot ? "course__status" : ""}>
         {course.isHot ? "Hot" : null}
       </span>
-      <span className="add" onClick={()=> addSavedItem(course)}>add</span>
+      <span className="add" onClick={ saved.includes(course)? ()=>removeSavedItem(course.id) : ()=> addSavedItem(course)}>
+       { saved.includes(course)? 
+        (<img src="https://img.icons8.com/dusk/40/000000/bookmark-ribbon.png" alt="img colored"/>)
+        :
+        (<img src="https://img.icons8.com/wired/40/000000/bookmark-ribbon.png" alt="img not colored"/>)}
+             </span>
     </div>
   );
 };
+const getSavedFromStore = state =>{
+  return{
+    saved: state.savedList.saved,
+  }
+}
   
-export default connect(null, {addSavedItem}) (CourseItem);
+export default connect(getSavedFromStore, {addSavedItem , removeSavedItem}) (CourseItem);

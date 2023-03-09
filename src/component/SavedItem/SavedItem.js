@@ -17,7 +17,10 @@ const SavedItem = ({savedItem, removeSavedItem}) => {
                 <span className='saved__dollarsign'>$</span>
             </div>
             <span className={savedItem.isHot? 'course__status--saved': null}>{savedItem.isHot? "Hot":""}</span>
-            <span className='remove__item' onClick={ () => removeSavedItem(SavedItem.id)}>Remove</span>
+            
+            <span className='remove__item' onClick={ () => removeSavedItem(SavedItem.id)}>
+            <img src="https://img.icons8.com/cute-clipart/64/null/delete-forever.png" alt='remove img'/>
+            </span>
         </div>
      );
 }

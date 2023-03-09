@@ -25,7 +25,7 @@ const savedList = (state = initState , action) => {
             saved: [...state.saved, action.payload],
       };
     }
-    
+
     else if(action.type === 'REMOVE_ITEM'){
         return {
             ...state,
