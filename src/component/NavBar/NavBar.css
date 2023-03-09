@@ -9,14 +9,25 @@
     display: flex;
     margin: 0;
     padding: 0;
+    
 }
 
 .header__item{
     margin: 0 1.2rem;
+    position: relative;
 }
 
 .header__link{
     text-decoration: none;
     color: #000;
     font-size: large;
+}
+.saved__count{
+    color: white;
+    background-color: darkgreen;
+    border-radius: 50%;
+    padding: .3rem .5rem;
+    position: absolute;
+    top: -1rem;
+    left: -1.5rem;
 }
