@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { removeSavedItem } from '../../actions/actions';
 import { Link } from 'react-router-dom';
 
-const SavedItem = ({savedItem, removeSavedItem}) => {
+const SavedItem = ({savedItem, removeSavedItem, course}) => {
     return ( 
         <div className='saved__item'>
             <div className='img__container--saved'>

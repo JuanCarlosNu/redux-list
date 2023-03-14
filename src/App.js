@@ -14,7 +14,7 @@ const App= ()=> {
       <Switch>
       <Route path="/home" exact component={CoursesList} />
       <Route path="/saved" exact component={SavedList}/>
-      <Route path="/coursedetail" exact component={CourseDetails} />
+      <Route path="/courses/:id" exact component={CourseDetails} />
       <Redirect from='/' to='home' />
       <Redirect  to='home' />
       </Switch>
