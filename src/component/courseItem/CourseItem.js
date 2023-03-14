@@ -2,6 +2,7 @@ import React from "react";
 import "./CourseItem.css";
 import { connect } from "react-redux";
 import { addSavedItem, removeSavedItem } from "../../actions/actions";
+import { Link } from "react-router-dom";
 
 const CourseItem =({course, addSavedItem, saved, removeSavedItem})  => {
   
@@ -10,16 +11,16 @@ const CourseItem =({course, addSavedItem, saved, removeSavedItem})  => {
       <div className="img__container">
         <img
           className="course__img"
-          src={course.courseImage}
+          src={course.courseImage} //  getting the course as from corseslist tag: <CourseItem key={course.id} course={course} />.
           alt={course.title}
         />
       </div>
 
      
 
-     
+     <Link to={`/courses/${course.id}`}>
         <h3 className="course__title m-left">{course.title}</h3>
-
+        </Link>
       <span className="course__author m-left">By: {course.author}</span>
       <div className="course__price">
         <span className="price__number">{course.price}</span>

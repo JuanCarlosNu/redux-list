@@ -9,7 +9,9 @@ const SavedList = ({saved}) => {
         <div>
             {
             saved.length === 0 ? <div>"not saved courses"</div>:
-             <div className='saved__items'>{ saved.map(savedItem => <SavedItem key={savedItem.id} savedItem={savedItem}/>)}</div>
+             <div className='saved__items'>{ saved.map(savedItem => 
+
+             <SavedItem key={savedItem.id} savedItem={savedItem}/>)}</div>
 
             }
         </div>
